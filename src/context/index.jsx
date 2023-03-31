@@ -49,3 +49,18 @@ const MaterialUIControllerProvider = ({ children }) => {
     return <MaterialUI.Provider value={value}>{children}</MaterialUI.Provider>;
 }
 
+const useMaterialUIController = () => {
+    const context = useContext(MaterialUI);
+
+    if (!context) {
+        throw new Error (
+            "useMaterialUIController should be used inside the MaterialUIControllerProvider"
+        );
+    }
+    return context;
+}
+
+MaterialUIControllerProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
