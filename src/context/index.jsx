@@ -32,3 +32,20 @@ const reducer = (state, action) => {
         }
       }
 } 
+
+const MaterialUIControllerProvider = ({ children }) => {
+    const initialState = {
+        miniSidenav: false,
+        transparentSidenav: false,
+        transparentNavbar: true,
+        fixedNavbar: true,
+        layout: "dashboard",   
+    };
+
+    const [ controller, dispatch ] = useReducer(reducer, initialState);
+
+    const value = useMemo(() => [controller, dispatch],  [controller, dispatch]);
+
+    return <MaterialUI.Provider value={value}>{children}</MaterialUI.Provider>;
+}
+
