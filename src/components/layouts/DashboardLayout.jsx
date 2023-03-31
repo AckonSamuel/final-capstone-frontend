@@ -25,7 +25,7 @@ const DashboardLayout = ({ children }) => {
 
     useEffect(() => {
         setLayout(dispatch, "dashboard");
-    }, [dispatch]);
+    }, [pathname]);
 
     return (
         <StyledContainer>
