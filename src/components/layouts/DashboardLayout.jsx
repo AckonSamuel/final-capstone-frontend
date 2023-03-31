@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import { useMaterialUIController, setLayout } from '../../context';
 
-
 const DashboardLayout = ({ children }) => {
     const [controller, dispatch ] = useMaterialUIController();
     const { miniSidenav } = controller;
@@ -32,8 +31,10 @@ const DashboardLayout = ({ children }) => {
             {children}
         </StyledContainer>
     )
-}
+};
 
 DashboardLayout.PropTypes = {
     children: PropTypes.node.isRequired,
-}
+};
+
+export default DashboardLayout;
