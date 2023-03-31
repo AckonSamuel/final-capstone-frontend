@@ -64,3 +64,20 @@ MaterialUIControllerProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
+
+const setMiniSidenav = (dispatch, value) => dispatch({ type: "MINI_SIDENAV", value });
+const setTransparentSidenav = (dispatch, value) => dispatch({ type: "TRANSPARENT_SIDENAV", value });
+const setTransparentNavbar = (dispatch, value) => dispatch({ type: "TRANSPARENT_NAVBAR", value });
+const setFixedNavbar = (dispatch, value) => dispatch({ type: "FIXED_NAVBAR", value });
+const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
+
+export {
+    MaterialUIControllerProvider,
+    useMaterialUIController,
+    setMiniSidenav,
+    setTransparentSidenav,
+    setTransparentNavbar,
+    setFixedNavbar,
+    setLayout,
+  };
+  
