@@ -4,7 +4,8 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import AuthenticationLayout from "./AuthenticationLayout";
 
-const BasicLayout = ({ image, children }) => {
+const image = "https://user-images.githubusercontent.com/92922987/229172033-753c8f17-8fb2-49bd-8cdd-aca203f2443d.jpg";
+const BasicLayout = ({ children }) => {
 
   const BoxIm = styled(Box)(() => ({ 
     width: "100%",
@@ -29,7 +30,6 @@ const BasicLayout = ({ image, children }) => {
 }
 
 BasicLayout.propTypes = {
-  image: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
