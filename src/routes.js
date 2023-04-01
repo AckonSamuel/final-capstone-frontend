@@ -2,6 +2,7 @@
 import Icon from "@mui/material/Icon";
 import Login from './components/authentication/Login';
 import RegisterPage from "./components/authentication/Registration";
+import Logout from "./components/authentication/Logout";
 
 const routes = [
     {
@@ -12,11 +13,18 @@ const routes = [
         component: <Login />,
       },
       {
-        name: "Sign In",
-        key: "sign-in",
+        name: "Register",
+        key: "sign-up",
         icon: <Icon fontSize="small">login</Icon>,
         route: "/register",
         component: <RegisterPage />,
+      },
+      {
+        name: "Logout",
+        key: "sign-in",
+        icon: <Icon fontSize="small">login</Icon>,
+        route: "/logout",
+        component: <Logout />,
       },
 ];
 
