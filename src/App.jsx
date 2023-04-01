@@ -7,12 +7,18 @@ import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
 import pxToRem from "./theme/pxToRem";
+import linearGradient from  './theme/linearGradient';
+import rgba from './theme/rgba';
+import hexToRgb from "./theme/hexToRgb";
 import routes from './routes';
 
 const theme = createTheme({
   functions: {
     pxToRem,
-  }
+    linearGradient,
+    hexToRgb,
+    rgba
+  },
 });
 
 const App = () => {
@@ -36,7 +42,6 @@ const App = () => {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-          {getRoutes(routes)}
           <Routes>{getRoutes(routes)}</Routes>
       </ThemeProvider>
     </CacheProvider>

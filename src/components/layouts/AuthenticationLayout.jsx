@@ -9,6 +9,7 @@ const AuthenticationLayout = ({ background, children }) => {
   const { pathname } = useLocation();
   useEffect(() => {
     setLayout(dispatch, "page");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
@@ -16,7 +17,6 @@ const AuthenticationLayout = ({ background, children }) => {
       width="100vw"
       height="100%"
       minHeight="100vh"
-      bgColor={background}
       sx={{ overflowX: "hidden" }}
     >
       {children}

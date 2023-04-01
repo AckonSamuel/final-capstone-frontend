@@ -16,7 +16,7 @@ import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import BasicLayout from "../../layouts/BasicLayout";
-import { userLogin } from "redux/slices/loginSlice";
+import { userLogin } from "../../../redux/slices/loginSlice";
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -66,17 +66,13 @@ function Basic() {
     <BasicLayout image={bgImage}>
       <Card>
         <Box
-          variant="gradient"
-          bgColor="success"
           borderRadius="lg"
-          coloredShadow="info"
           mx={2}
           mt={-5}
           p={2}
           mb={1}
           textAlign="center"
         >
-          <logo />
           <Typography variant="h4" fontWeight="medium" color="white" mt={0.4}>
             Sign in
           </Typography>
@@ -90,16 +86,20 @@ function Basic() {
               </Typography>
             </Box>
           )}
+
           <Box mb={2}>
-            <Input
-              type="email"
-              label="Email"
-              disabled={loading}
-              {...register("email", {
-                required: true,
-              })}
-              fullWidth
-            />
+            <FormControl sx={{ width: "100%" }} variant="outlined">
+              <InputLabel htmlFor="outlined-email">Email</InputLabel>
+              <OutlinedInput
+                id="outlined-email"
+                autoComplete="current-email"
+                fullWidth
+                disabled={loading}
+                type="email"
+                label="email"
+                {...register("email", { required: true })}
+              />
+            </FormControl>
           </Box>
           <Box mb={2}>
             <FormControl sx={{ width: "100%" }} variant="outlined">
@@ -139,8 +139,9 @@ function Basic() {
               &nbsp;&nbsp;Remember me
             </Typography>
           </Box>
+
           <Box mt={4} mb={1}>
-            <Button disabled={loading} variant="gradient" color="success" type="submit" fullWidth>
+            <Button disabled={loading} variant="contained"  type="submit" fullWidth>
               {loading ? "Authenticating user..." : "Sign in"}
             </Button>
           </Box>
@@ -154,7 +155,7 @@ function Basic() {
                 variant="button"
                 color="success"
                 fontWeight="medium"
-                textGradient
+
               >
                 Sign up
               </Typography>
@@ -168,14 +169,15 @@ function Basic() {
               variant="button"
               color="warning"
               fontWeight="medium"
-              textGradient
+
             >
               Forgot password?
             </Typography>
           </Box>
         </Box>
-      </Card>
-    </BasicLayout>
+
+    </Card>
+    </BasicLayout >
   );
 }
 
