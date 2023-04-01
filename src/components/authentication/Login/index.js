@@ -57,6 +57,7 @@ function Basic() {
         }
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submitted]);
 
   const bgImage = 'https://user-images.githubusercontent.com/92922987/229172033-753c8f17-8fb2-49bd-8cdd-aca203f2443d.jpg';
