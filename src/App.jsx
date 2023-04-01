@@ -6,10 +6,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
-
+import pxToRem from "./theme/pxToRem";
 import routes from './routes';
 
-const theme = createTheme();
+const theme = createTheme({
+  functions: {
+    pxToRem,
+  }
+});
 
 const App = () => {
 
