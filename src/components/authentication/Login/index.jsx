@@ -61,7 +61,7 @@ function Basic() {
   }, [submitted]);
 
   return (
-    <BasicLayout image={bgImage}>
+    <BasicLayout>
       <Card>
         <Box
           borderRadius="lg"
@@ -149,7 +149,7 @@ function Basic() {
               <Typography
                 component={Link}
                 disabled={loading}
-                to="/authentication/sign-up"
+                to="/register"
                 variant="button"
                 color="success"
                 fontWeight="medium"

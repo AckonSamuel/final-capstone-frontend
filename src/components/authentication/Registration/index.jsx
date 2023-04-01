@@ -10,9 +10,6 @@ import Checkbox from "@mui/material/Checkbox";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import FormControl from "@mui/material/FormControl";
@@ -22,10 +19,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
-import { userRegister } from '../../../redux/slices/registerSlice';
+import { userSignUp } from '../../../redux/slices/registerSlice';
 import BasicLayout from "../../layouts/BasicLayout";
+import TextField from '@mui/material/TextField';
 // import ConfirmationEmail from "layouts/authentication/email";
 
 const formSchema = Yup.object({
@@ -91,18 +88,17 @@ const RegisterPage = () => {
           mb={1}
           textAlign="center"
         >
-          <Typography variant="h4" fontWeight="medium" color="white" mt={1}>
+          <Typography variant="h4" fontWeight="medium" color="black" mt={3}>
             Join us today
           </Typography>
-          <Typography display="block" variant="button" color="white" my={1}>
+          <Typography display="block" variant="button" color="black" my={1}>
             Fill the fields to get started
           </Typography>
         </Box>
           <Box pt={4} pb={3} px={3}>
             <Box component="form" role="form" onSubmit={handleSubmit(showdata)}>
               <Box mb={2}>
-                <Input
-                  type="text"
+                <TextField
                   label="Name"
                   variant="standard"
                   disabled={loading}
@@ -111,7 +107,7 @@ const RegisterPage = () => {
                 />
               </Box>
               <Box mb={2}>
-                <Input
+                <TextField
                   type="email"
                   label="Email"
                   variant="standard"
@@ -175,41 +171,6 @@ const RegisterPage = () => {
                   </p>
                 </FormControl>
               </Box>
-              <Box mb={2}>
-                <Input
-                  type="number"
-                  label="Telephone number"
-                  variant="standard"
-                  disabled={loading}
-                  fullWidth
-                  {...register("telephone_number", { required: true })}
-                />
-                <p>{errors.phone_number ? errors.phone_number.message : ""}</p>
-              </Box>
-              <Box mb={2}>
-                <FormControl fullWidth variant="standard">
-                  <InputLabel htmlFor="group">Group</InputLabel>
-                  <Select
-                    disabled={loading}
-                    {...register("group")}
-                    required
-                    id="group"
-                    label="group"
-                    variant="standard"
-                  >
-                    <MenuItem value="Religious">Religious</MenuItem>
-                    <MenuItem value="Alumni">Alumni</MenuItem>
-                    <MenuItem value="Ethnic">Ethnic</MenuItem>
-                    <MenuItem value="Professional">Professional</MenuItem>
-                    <MenuItem value="College">College</MenuItem>
-                    <MenuItem value="Faculty">Faculty</MenuItem>
-                    <MenuItem value="Department">Department</MenuItem>
-                    <MenuItem value="Entertainment">Entertainment</MenuItem>
-                    <MenuItem value="Sports">Sports</MenuItem>
-                    <MenuItem value="Other">Other</MenuItem>
-                  </Select>
-                </FormControl>
-              </Box>
               <Box display="flex" alignItems="center" ml={-1}>
                 <Checkbox disabled={loading} />
                 <Typography
@@ -233,9 +194,8 @@ const RegisterPage = () => {
               </Box>
               <Box mt={4} mb={1}>
                 <Button
-                  variant="container"
+                  variant="contained"
                   disabled={loading}
-                  color="success"
                   type="submit"
                   fullWidth
                 >
