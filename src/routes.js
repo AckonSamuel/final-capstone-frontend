@@ -6,21 +6,21 @@ import Logout from "./components/authentication/Logout";
 
 const routes = [
     {
-        name: "Sign In",
+        route_name: "Sign In",
         key: "sign-in",
         icon: <Icon fontSize="small">login</Icon>,
         route: "/",
         component: <Login />,
       },
       {
-        name: "Register",
+        route_name: "Register",
         key: "sign-up",
         icon: <Icon fontSize="small">login</Icon>,
         route: "/register",
         component: <RegisterPage />,
       },
       {
-        name: "Logout",
+        route_name: "Logout",
         key: "sign-in",
         icon: <Icon fontSize="small">login</Icon>,
         route: "/logout",

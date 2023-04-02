@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }) => {
         padding: 3,
     
         [theme.breakpoint.up['xl']]: {
-            marginLeft: miniSidenav ? pxToRem(120) : pxToRem(274),
+            marginLeft: miniSidenav ? theme.functions.pxToRem(120) : theme.functions.pxToRem(274),
             transition: theme.transitions.create(["margin-left", "margin-right"], {
                 easing:theme.transitions.easing.easeInOut,
                 duration: theme.transitions.duration.standard,
