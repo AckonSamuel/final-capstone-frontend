@@ -7,7 +7,7 @@ import store from './redux/configStore';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import { MaterialUIControllerProvider } from "./context";
+import { MaterialUIControllerProvider } from './context';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -16,14 +16,14 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-      <MaterialUIControllerProvider>
-        <SnackbarProvider maxSnack={4}>
-          <App />
-        </SnackbarProvider>
+        <MaterialUIControllerProvider>
+          <SnackbarProvider maxSnack={4}>
+            <App />
+          </SnackbarProvider>
         </MaterialUIControllerProvider>
       </Router>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
