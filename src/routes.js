@@ -7,21 +7,21 @@ import Dashboard from './components/Dashboard';
 
 const routes = [
   {
-    route_name: 'Sign In',
+    routeName: 'Sign In',
     key: 'sign-in',
     icon: <Icon fontSize="small">login</Icon>,
     route: '/',
     component: <Login />,
   },
   {
-    route_name: 'Register',
+    routeName: 'Register',
     key: 'sign-up',
     icon: <Icon fontSize="small">login</Icon>,
     route: '/register',
     component: <RegisterPage />,
   },
   {
-    route_name: 'Logout',
+    routeName: 'Logout',
     key: 'sign-in',
     icon: <Icon fontSize="small">login</Icon>,
     route: '/logout',
@@ -29,7 +29,7 @@ const routes = [
   },
   {
     type: 'collapse',
-    route_name: 'Dashboard',
+    routeName: 'Dashboard',
     key: 'dashboard',
     icon: <Icon fontSize="small">person</Icon>,
     route: '/dashboard',

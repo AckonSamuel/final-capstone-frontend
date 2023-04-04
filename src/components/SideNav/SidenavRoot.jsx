@@ -9,7 +9,7 @@ export default styled(Drawer)(({ theme, ownerState }) => {
   const { pxToRem } = functions;
 
   const sidebarWidth = 250;
-  const backgroundValue = 'green'
+  const backgroundValue = 'green';
 
   const drawerOpenStyles = () => ({
     background: backgroundValue,

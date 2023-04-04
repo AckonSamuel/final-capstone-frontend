@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -14,24 +15,22 @@ import {
 
 import { useMaterialUIController } from '../../context';
 
-const SidenavCollapse = ({ icon, route_name, active, ...rest }) => {
+const SidenavCollapse = ({
+  icon, routeName, active, ...rest
+}) => {
   const [controller] = useMaterialUIController();
   const { miniSidenav } = controller;
 
   return (
-    <ListItem component='li'>
+    <ListItem component="li">
       <Box
         {...rest}
-        sx={(theme) =>
-          collapseItem(theme, {
-            active,
-          })
-        }
+        sx={(theme) => collapseItem(theme, {
+          active,
+        })}
       >
         <ListItemIcon
-          sx={(theme) =>
-            collapseIconBox(theme, { active })
-          }
+          sx={(theme) => collapseIconBox(theme, { active })}
         >
           {typeof icon === 'string' ? (
             <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
@@ -41,18 +40,16 @@ const SidenavCollapse = ({ icon, route_name, active, ...rest }) => {
         </ListItemIcon>
 
         <ListItemText
-          primary={route_name}
-          sx={(theme) =>
-            collapseText(theme, {
-              miniSidenav,
-              active,
-            })
-          }
+          primary={routeName}
+          sx={(theme) => collapseText(theme, {
+            miniSidenav,
+            active,
+          })}
         />
       </Box>
     </ListItem>
   );
-}
+};
 
 SidenavCollapse.defaultProps = {
   active: false,
@@ -60,7 +57,7 @@ SidenavCollapse.defaultProps = {
 
 SidenavCollapse.propTypes = {
   icon: PropTypes.node.isRequired,
-  route_name: PropTypes.string.isRequired,
+  routeName: PropTypes.string.isRequired,
   active: PropTypes.bool,
 };
 

@@ -1,7 +1,7 @@
 import DashboardLayout from '../layouts/DashboardLayout';
-import Navbar from './../Navbar';
-function Overview() {
+import Navbar from '../Navbar';
 
+function Overview() {
   return (
     <DashboardLayout>
       <Navbar />

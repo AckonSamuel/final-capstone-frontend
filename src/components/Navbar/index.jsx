@@ -1,5 +1,4 @@
 import { useLocation, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -17,7 +16,7 @@ import {
 import {
   useMaterialUIController,
   setMiniSidenav,
-} from './../../context';
+} from '../../context';
 
 const Navbar = () => {
   const [controller, dispatch] = useMaterialUIController();
@@ -28,29 +27,29 @@ const Navbar = () => {
   const isMini = window.innerWidth < 1200;
   return (
     <AppBar
-      position='absolute'
-      color='inherit'
+      position="absolute"
+      color="inherit"
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
-        <Box color='inherit' mb={{ xs: 1 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon='home' title={route[route.length - 1]} route={route} l/>
+        <Box color="inherit" mb={{ xs: 1 }} sx={(theme) => navbarRow(theme, { isMini })}>
+          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} l />
         </Box>
         {isMini && (
           <Box sx={(theme) => navbarRow(theme, { isMini })}>
-            <Box color='white'>
-              <Link to='/profile'>
-                <IconButton sx={navbarIconButton} size='small' disableRipple>
+            <Box color="white">
+              <Link to="/profile">
+                <IconButton sx={navbarIconButton} size="small" disableRipple>
                   <Icon>account_circle</Icon>
                 </IconButton>
               </Link>
               <IconButton
-                size='small'
+                size="small"
                 disableRipple
-                color='inherit'
+                color="inherit"
                 sx={navbarMobileMenu}
                 onClick={handleMiniSidenav}
               >
-                <Icon sx={{ color: 'black' }} fontSize='medium'>
+                <Icon sx={{ color: 'black' }} fontSize="medium">
                   {miniSidenav ? 'menu_open' : 'menu'}
                 </Icon>
               </IconButton>
@@ -60,6 +59,6 @@ const Navbar = () => {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default Navbar;

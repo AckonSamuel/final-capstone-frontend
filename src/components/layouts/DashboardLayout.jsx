@@ -6,36 +6,36 @@ import { styled } from '@mui/material/styles';
 import { useMaterialUIController, setLayout } from '../../context';
 
 const DashboardLayout = ({ children }) => {
-    const [controller, dispatch ] = useMaterialUIController();
-    const { miniSidenav } = controller;
-    const { pathname } = useLocation();
+  const [controller, dispatch] = useMaterialUIController();
+  const { miniSidenav } = controller;
+  const { pathname } = useLocation();
 
-    const StyledContainer = styled(Box)(({ theme }) => ({
-        postion: 'relative',
-        padding: 3,
-    
-        [theme.breakpoints.up['xl']]: {
-            marginLeft: miniSidenav ? theme.functions.pxToRem(120) : theme.functions.pxToRem(274),
-            transition: theme.transitions.create(['margin-left', 'margin-right'], {
-                easing:theme.transitions.easing.easeInOut,
-                duration: theme.transitions.duration.standard,
-            })
-        }
-    }));
+  const StyledContainer = styled(Box)(({ theme }) => ({
+    postion: 'relative',
+    padding: 3,
 
-    useEffect(() => {
-        setLayout(dispatch, 'dashboard');
-    }, [pathname]);
+    [theme.breakpoints.up.xl]: {
+      marginLeft: miniSidenav ? theme.functions.pxToRem(120) : theme.functions.pxToRem(274),
+      transition: theme.transitions.create(['margin-left', 'margin-right'], {
+        easing: theme.transitions.easing.easeInOut,
+        duration: theme.transitions.duration.standard,
+      }),
+    },
+  }));
 
-    return (
-        <StyledContainer>
-            {children}
-        </StyledContainer>
-    )
+  useEffect(() => {
+    setLayout(dispatch, 'dashboard');
+  }, [pathname, dispatch]);
+
+  return (
+    <StyledContainer>
+      {children}
+    </StyledContainer>
+  );
 };
 
 DashboardLayout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default DashboardLayout;
