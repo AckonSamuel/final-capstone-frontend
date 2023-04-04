@@ -3,6 +3,7 @@ import Icon from "@mui/material/Icon";
 import Login from './components/authentication/Login';
 import RegisterPage from "./components/authentication/Registration";
 import Logout from "./components/authentication/Logout";
+import Dashboard from "./components/Dashboard";
 
 const routes = [
     {
@@ -25,6 +26,14 @@ const routes = [
         icon: <Icon fontSize="small">login</Icon>,
         route: "/logout",
         component: <Logout />,
+      },
+      {
+        type: "collapse",
+        route_name: "Dashboard",
+        key: "dashboard",
+        icon: <Icon fontSize="small">person</Icon>,
+        route: "/dashboard",
+        component: <Dashboard />,
       },
 ];
 
