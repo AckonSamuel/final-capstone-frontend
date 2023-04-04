@@ -9,7 +9,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import Box from "@mui/material/Box";
 import { userLogout } from "../../../redux/slices/logoutSlice";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CircularProgress } from "@mui/material";
 
