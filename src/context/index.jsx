@@ -8,22 +8,22 @@ MaterialUI.displayName = 'MaterialUIContext';
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "MINI_SIDENAV": {
+        case 'MINI_SIDENAV': {
           return { ...state, miniSidenav: action.value };
         }
-        case "TRANSPARENT_SIDENAV": {
+        case 'TRANSPARENT_SIDENAV': {
           return { ...state, transparentSidenav: action.value };
         }
 
-        case "TRANSPARENT_NAVBAR": {
+        case 'TRANSPARENT_NAVBAR': {
           return { ...state, transparentNavbar: action.value };
         }
 
-        case "FIXED_NAVBAR": {
+        case 'FIXED_NAVBAR': {
           return { ...state, fixedNavbar: action.value };
         }
 
-        case "LAYOUT": {
+        case 'LAYOUT': {
           return { ...state, layout: action.value };
         }
 
@@ -39,7 +39,7 @@ const MaterialUIControllerProvider = ({ children }) => {
         transparentSidenav: false,
         transparentNavbar: true,
         fixedNavbar: true,
-        layout: "dashboard",   
+        layout: 'dashboard',   
     };
 
     const [ controller, dispatch ] = useReducer(reducer, initialState);
@@ -54,7 +54,7 @@ const useMaterialUIController = () => {
 
     if (!context) {
         throw new Error (
-            "useMaterialUIController should be used inside the MaterialUIControllerProvider"
+            'useMaterialUIController should be used inside the MaterialUIControllerProvider'
         );
     }
     return context;
@@ -65,11 +65,11 @@ MaterialUIControllerProvider.propTypes = {
 };
 
 
-const setMiniSidenav = (dispatch, value) => dispatch({ type: "MINI_SIDENAV", value });
-const setTransparentSidenav = (dispatch, value) => dispatch({ type: "TRANSPARENT_SIDENAV", value });
-const setTransparentNavbar = (dispatch, value) => dispatch({ type: "TRANSPARENT_NAVBAR", value });
-const setFixedNavbar = (dispatch, value) => dispatch({ type: "FIXED_NAVBAR", value });
-const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
+const setMiniSidenav = (dispatch, value) => dispatch({ type: 'MINI_SIDENAV', value });
+const setTransparentSidenav = (dispatch, value) => dispatch({ type: 'TRANSPARENT_SIDENAV', value });
+const setTransparentNavbar = (dispatch, value) => dispatch({ type: 'TRANSPARENT_NAVBAR', value });
+const setFixedNavbar = (dispatch, value) => dispatch({ type: 'FIXED_NAVBAR', value });
+const setLayout = (dispatch, value) => dispatch({ type: 'LAYOUT', value });
 
 export {
     MaterialUIControllerProvider,

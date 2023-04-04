@@ -1,5 +1,5 @@
-import DashboardLayout from "../layouts/DashboardLayout";
-import Navbar from "./../Navbar";
+import DashboardLayout from '../layouts/DashboardLayout';
+import Navbar from './../Navbar';
 function Overview() {
 
   return (

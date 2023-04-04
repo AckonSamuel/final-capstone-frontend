@@ -1,24 +1,24 @@
-import { useEffect } from "react";
-import { useLocation, NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import Icon from "@mui/material/Icon";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import SidenavCollapse from "./SidenavCollapse";
-import SidenavRoot from "./SidenavRoot";
-import sidenavLogoLabel from "./styles/sidenav";
-import Logout from "../authentication/Logout";
-import { useMaterialUIController, setMiniSidenav } from "../../context";
+import { useEffect } from 'react';
+import { useLocation, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import Icon from '@mui/material/Icon';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import SidenavCollapse from './SidenavCollapse';
+import SidenavRoot from './SidenavRoot';
+import sidenavLogoLabel from './styles/sidenav';
+import Logout from '../authentication/Logout';
+import { useMaterialUIController, setMiniSidenav } from '../../context';
 
 const Sidenav = ({ color, brand, brandName, routes, ...rest }) => {
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav } = controller;
   const location = useLocation();
-  const collapseName = location.pathname.replace("/", "");
+  const collapseName = location.pathname.replace('/', '');
 
-  let textColor = "white";
+  let textColor = 'white';
 
   const closeSidenav = () => setMiniSidenav(dispatch, true);
 
@@ -27,15 +27,15 @@ const Sidenav = ({ color, brand, brandName, routes, ...rest }) => {
       setMiniSidenav(dispatch, window.innerWidth < 1200);
     }
 
-    window.addEventListener("resize", handleMiniSidenav);
+    window.addEventListener('resize', handleMiniSidenav);
 
     handleMiniSidenav();
 
-    return () => window.removeEventListener("resize", handleMiniSidenav);
+    return () => window.removeEventListener('resize', handleMiniSidenav);
   }, [dispatch, location]);
 
   const renderRoutes = routes.map(({ type, route_name, icon, key, route }) => {
-    if (type === "collapse") {
+    if (type === 'collapse') {
         return (<NavLink key={key} to={route}>
         <SidenavCollapse route_name={route_name} icon={icon} active={key === collapseName} />
       </NavLink> )
@@ -47,30 +47,30 @@ const Sidenav = ({ color, brand, brandName, routes, ...rest }) => {
   return (
     <SidenavRoot
       {...rest}
-      variant="permanent"
+      variant='permanent'
       ownerState={{ miniSidenav }}
     >
-      <Box pt={3} pb={1} px={4} textAlign="center">
+      <Box pt={3} pb={1} px={4} textAlign='center'>
         <Box
-            position="absolute"
-            display={ window.innerWidth < 1200 ? "block" : "none"}
+            position='absolute'
+            display={ window.innerWidth < 1200 ? 'block' : 'none'}
             top={0}
             right={0}
             p={1.625}
-            cursor="pointer"
+            cursor='pointer'
           onClick={closeSidenav}
         >
-          <Typography variant="h6" color="secondary">
-            <Icon sx={{ fontWeight: "bold" }}>close</Icon>
+          <Typography variant='h6' color='secondary'>
+            <Icon sx={{ fontWeight: 'bold' }}>close</Icon>
           </Typography>
         </Box>
-        <Box component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && <Box component="img" src={brand} alt="Brand" width="2rem" />}
+        <Box component={NavLink} to='/' display='flex' alignItems='center'>
+          {brand && <Box component='img' src={brand} alt='Brand' width='2rem' />}
           <Box
-            width={!brandName && "100%"}
+            width={!brandName && '100%'}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
-            <Typography component="h6" variant="button" fontWeight="medium" color={textColor}>
+            <Typography component='h6' variant='button' fontWeight='medium' color={textColor}>
               {brandName}
             </Typography>
           </Box>
@@ -80,12 +80,12 @@ const Sidenav = ({ color, brand, brandName, routes, ...rest }) => {
       <List>{renderRoutes}</List>
       <Box
         sx={{
-          marginTop: "auto",
-          marginBottom: "2em",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          marginTop: 'auto',
+          marginBottom: '2em',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Logout />
@@ -95,12 +95,12 @@ const Sidenav = ({ color, brand, brandName, routes, ...rest }) => {
 }
 
 Sidenav.defaultProps = {
-  color: "success",
-  brand: "",
+  color: 'success',
+  brand: '',
 };
 
 Sidenav.propTypes = {
-  color: PropTypes.oneOf(["primary", "secondary", "info", "success",]),
+  color: PropTypes.oneOf(['primary', 'secondary', 'info', 'success',]),
   brand: PropTypes.string,
   brandName: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,

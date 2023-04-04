@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import Card from "@mui/material/Card";
-import Switch from "@mui/material/Switch";
-import { useForm } from "react-hook-form";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Input from "@mui/material/Input";
-import Button from "@mui/material/Button";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import BasicLayout from "../../layouts/BasicLayout";
-import { userLogin } from "../../../redux/slices/loginSlice";
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Card from '@mui/material/Card';
+import Switch from '@mui/material/Switch';
+import { useForm } from 'react-hook-form';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import BasicLayout from '../../layouts/BasicLayout';
+import { userLogin } from '../../../redux/slices/loginSlice';
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -52,8 +52,8 @@ function Basic() {
       const data = getValues();
 
       dispatch(userLogin(data)).then((res) => {
-        if (res.type === "user/userLogin/fulfilled") {
-          navigate("/dashbard");
+        if (res.type === 'user/userLogin/fulfilled') {
+          navigate('/dashbard');
         }
       });
     }
@@ -64,109 +64,109 @@ function Basic() {
     <BasicLayout>
       <Card>
         <Box
-          borderRadius="lg"
+          borderRadius='lg'
           mx={2}
           mt={-5}
           p={2}
           mb={1}
-          textAlign="center"
+          textAlign='center'
         >
-          <Typography variant="h4" fontWeight="medium" color="white" mt={0.4}>
+          <Typography variant='h4' fontWeight='medium' color='white' mt={0.4}>
             Sign in
           </Typography>
         </Box>
 
-        <Box p={2} component="form" role="form" onSubmit={handleSubmit(showdata)}>
+        <Box p={2} component='form' role='form' onSubmit={handleSubmit(showdata)}>
           {error.length > 0 && (
             <Box mt={2}>
-              <Typography variant="h6" color="warning">
+              <Typography variant='h6' color='warning'>
                 Sign in Failed. Invalid credentials.
               </Typography>
             </Box>
           )}
 
           <Box mb={2}>
-            <FormControl sx={{ width: "100%" }} variant="outlined">
-              <InputLabel htmlFor="outlined-email">Email</InputLabel>
+            <FormControl sx={{ width: '100%' }} variant='outlined'>
+              <InputLabel htmlFor='outlined-email'>Email</InputLabel>
               <OutlinedInput
-                id="outlined-email"
-                autoComplete="current-email"
+                id='outlined-email'
+                autoComplete='current-email'
                 fullWidth
                 disabled={loading}
-                type="email"
-                label="email"
-                {...register("email", { required: true })}
+                type='email'
+                label='email'
+                {...register('email', { required: true })}
               />
             </FormControl>
           </Box>
           <Box mb={2}>
-            <FormControl sx={{ width: "100%" }} variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+            <FormControl sx={{ width: '100%' }} variant='outlined'>
+              <InputLabel htmlFor='outlined-adornment-password'>Password</InputLabel>
               <OutlinedInput
-                id="outlined-adornment-password"
-                autoComplete="current-password"
+                id='outlined-adornment-password'
+                autoComplete='current-password'
                 fullWidth
                 disabled={loading}
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 endAdornment={
-                  <InputAdornment position="end">
+                  <InputAdornment position='end'>
                     <IconButton
-                      aria-label="toggle password visibility"
+                      aria-label='toggle password visibility'
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
-                      edge="end"
+                      edge='end'
                     >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
-                label="Password"
-                {...register("password", { required: true })}
+                label='Password'
+                {...register('password', { required: true })}
               />
             </FormControl>
           </Box>
-          <Box display="flex" alignItems="center" ml={-1}>
+          <Box display='flex' alignItems='center' ml={-1}>
             <Switch checked={rememberMe} onChange={handleSetRememberMe} />
             <Typography
-              variant="button"
-              fontWeight="regular"
-              color="text"
+              variant='button'
+              fontWeight='regular'
+              color='text'
               onClick={handleSetRememberMe}
-              sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+              sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
             >
               &nbsp;&nbsp;Remember me
             </Typography>
           </Box>
 
           <Box mt={4} mb={1}>
-            <Button disabled={loading} variant="contained"  type="submit" fullWidth>
-              {loading ? "Authenticating user..." : "Sign in"}
+            <Button disabled={loading} variant='contained'  type='submit' fullWidth>
+              {loading ? 'Authenticating user...' : 'Sign in'}
             </Button>
           </Box>
-          <Box mt={3} mb={1} textAlign="center">
-            <Typography variant="button" color="text">
-              Don&apos;t have an account?{" "}
+          <Box mt={3} mb={1} textAlign='center'>
+            <Typography variant='button' color='text'>
+              Don&apos;t have an account?{' '}
               <Typography
                 component={Link}
                 disabled={loading}
-                to="/register"
-                variant="button"
-                color="success"
-                fontWeight="medium"
+                to='/register'
+                variant='button'
+                color='success'
+                fontWeight='medium'
 
               >
                 Sign up
               </Typography>
             </Typography>
           </Box>
-          <Box textAlign="center">
+          <Box textAlign='center'>
             <Typography
               component={Link}
               disabled={loading}
-              to="/email-for-password-reset"
-              variant="button"
-              color="warning"
-              fontWeight="medium"
+              to='/email-for-password-reset'
+              variant='button'
+              color='warning'
+              fontWeight='medium'
 
             >
               Forgot password?

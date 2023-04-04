@@ -1,23 +1,23 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import { useMaterialUIController, setLayout } from "../../context";
+import { useMaterialUIController, setLayout } from '../../context';
 
 const AuthenticationLayout = ({ background, children }) => {
   const [, dispatch] = useMaterialUIController();
   const { pathname } = useLocation();
   useEffect(() => {
-    setLayout(dispatch, "page");
+    setLayout(dispatch, 'page');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
     <Box
-      width="100vw"
-      height="100%"
-      minHeight="100vh"
-      sx={{ overflowX: "hidden" }}
+      width='100vw'
+      height='100%'
+      minHeight='100vh'
+      sx={{ overflowX: 'hidden' }}
     >
       {children}
     </Box>
@@ -25,11 +25,11 @@ const AuthenticationLayout = ({ background, children }) => {
 }
 
 AuthenticationLayout.defaultProps = {
-  background: "white",
+  background: 'white',
 };
 
 AuthenticationLayout.propTypes = {
-  background: PropTypes.oneOf(["white", "light"]),
+  background: PropTypes.oneOf(['white', 'light']),
   children: PropTypes.node.isRequired,
 };
 

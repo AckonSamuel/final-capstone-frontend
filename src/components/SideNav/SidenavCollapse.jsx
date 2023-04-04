@@ -1,25 +1,25 @@
-import PropTypes from "prop-types";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Icon from "@mui/material/Icon";
-import Box from "@mui/material/Box";
+import PropTypes from 'prop-types';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Icon from '@mui/material/Icon';
+import Box from '@mui/material/Box';
 
 import {
   collapseItem,
   collapseIconBox,
   collapseIcon,
   collapseText,
-} from "./styles/sidenavCollapse";
+} from './styles/sidenavCollapse';
 
-import { useMaterialUIController } from "../../context";
+import { useMaterialUIController } from '../../context';
 
 const SidenavCollapse = ({ icon, route_name, active, ...rest }) => {
   const [controller] = useMaterialUIController();
   const { miniSidenav } = controller;
 
   return (
-    <ListItem component="li">
+    <ListItem component='li'>
       <Box
         {...rest}
         sx={(theme) =>
@@ -33,7 +33,7 @@ const SidenavCollapse = ({ icon, route_name, active, ...rest }) => {
             collapseIconBox(theme, { active })
           }
         >
-          {typeof icon === "string" ? (
+          {typeof icon === 'string' ? (
             <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
           ) : (
             icon

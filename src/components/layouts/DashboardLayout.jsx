@@ -11,12 +11,12 @@ const DashboardLayout = ({ children }) => {
     const { pathname } = useLocation();
 
     const StyledContainer = styled(Box)(({ theme }) => ({
-        postion: "relative",
+        postion: 'relative',
         padding: 3,
     
         [theme.breakpoints.up['xl']]: {
             marginLeft: miniSidenav ? theme.functions.pxToRem(120) : theme.functions.pxToRem(274),
-            transition: theme.transitions.create(["margin-left", "margin-right"], {
+            transition: theme.transitions.create(['margin-left', 'margin-right'], {
                 easing:theme.transitions.easing.easeInOut,
                 duration: theme.transitions.duration.standard,
             })
@@ -24,7 +24,7 @@ const DashboardLayout = ({ children }) => {
     }));
 
     useEffect(() => {
-        setLayout(dispatch, "dashboard");
+        setLayout(dispatch, 'dashboard');
     }, [pathname]);
 
     return (

@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
-import CssBaseline from "@mui/material/CssBaseline";
-import createEmotionCache from "./createEmotionCache";
-import pxToRem from "./theme/pxToRem";
+import CssBaseline from '@mui/material/CssBaseline';
+import createEmotionCache from './createEmotionCache';
+import pxToRem from './theme/pxToRem';
 import linearGradient from  './theme/linearGradient';
 import rgba from './theme/rgba';
-import hexToRgb from "./theme/hexToRgb";
+import hexToRgb from './theme/hexToRgb';
 import routes from './routes';
-import { useMaterialUIController, setMiniSidenav } from "./context";
-import Sidenav from "./components/SideNav";
+import { useMaterialUIController, setMiniSidenav } from './context';
+import Sidenav from './components/SideNav';
 
 const theme = createTheme({
   functions: {
@@ -68,9 +68,9 @@ const App = () => {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {layout === "dashboard" && (
+        {layout === 'dashboard' && (
         <Sidenav
-          brandName="ClubWeb"
+          brandName='ClubWeb'
           routes={routes}
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}

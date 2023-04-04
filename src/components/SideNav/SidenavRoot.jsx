@@ -1,6 +1,6 @@
 // @mui material components
-import Drawer from "@mui/material/Drawer";
-import { styled } from "@mui/material/styles";
+import Drawer from '@mui/material/Drawer';
+import { styled } from '@mui/material/styles';
 
 export default styled(Drawer)(({ theme, ownerState }) => {
   const { transitions, breakpoints, functions } = theme;
@@ -9,22 +9,22 @@ export default styled(Drawer)(({ theme, ownerState }) => {
   const { pxToRem } = functions;
 
   const sidebarWidth = 250;
-  const backgroundValue = "green"
+  const backgroundValue = 'green'
 
   const drawerOpenStyles = () => ({
     background: backgroundValue,
-    transform: "translateX(0)",
-    transition: transitions.create("transform", {
+    transform: 'translateX(0)',
+    transition: transitions.create('transform', {
       easing: transitions.easing.sharp,
       duration: transitions.duration.shorter,
     }),
 
-    [breakpoints.up("xl")]: {
-      marginBottom: "inherit",
-      left: "0",
+    [breakpoints.up('xl')]: {
+      marginBottom: 'inherit',
+      left: '0',
       width: sidebarWidth,
-      transform: "translateX(0)",
-      transition: transitions.create(["width", "background-color"], {
+      transform: 'translateX(0)',
+      transition: transitions.create(['width', 'background-color'], {
         easing: transitions.easing.sharp,
         duration: transitions.duration.enteringScreen,
       }),
@@ -34,18 +34,18 @@ export default styled(Drawer)(({ theme, ownerState }) => {
   const drawerCloseStyles = () => ({
     background: backgroundValue,
     transform: `translateX(${pxToRem(-320)})`,
-    transition: transitions.create("transform", {
+    transition: transitions.create('transform', {
       easing: transitions.easing.sharp,
       duration: transitions.duration.shorter,
     }),
 
-    [breakpoints.up("xl")]: {
-      marginBottom: "inherit",
-      left: "0",
+    [breakpoints.up('xl')]: {
+      marginBottom: 'inherit',
+      left: '0',
       width: pxToRem(96),
-      overflowX: "hidden",
-      transform: "translateX(0)",
-      transition: transitions.create(["width", "background-color"], {
+      overflowX: 'hidden',
+      transform: 'translateX(0)',
+      transition: transitions.create(['width', 'background-color'], {
         easing: transitions.easing.sharp,
         duration: transitions.duration.shorter,
       }),
@@ -53,8 +53,8 @@ export default styled(Drawer)(({ theme, ownerState }) => {
   });
 
   return {
-    "& .MuiDrawer-paper": {
-      border: "none",
+    '& .MuiDrawer-paper': {
+      border: 'none',
 
       ...(miniSidenav ? drawerCloseStyles() : drawerOpenStyles()),
     },
