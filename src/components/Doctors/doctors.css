@@ -1,0 +1,39 @@
+.slick-next:before,
+.slick-prev:before {
+  color: #000 !important;
+}
+
+tbody tr td {
+  font-size: 0.8rem;
+  border: none;
+}
+
+.container {
+  min-width: 90%;
+}
+
+@media only screen and (max-width: 992px) {
+  .mobile__width  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:767px)
+{
+  .slider__content {
+    padding: 0;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    display:none !important;
+  }
+
+  .mobile__width {
+    min-width: 100%;
+  }
+
+  Button {
+    margin-right: 1.5rem !important;
+  }
+}
+
