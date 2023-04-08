@@ -5,6 +5,7 @@ import RegisterPage from './components/authentication/Registration';
 import Logout from './components/authentication/Logout';
 import Dashboard from './components/Dashboard';
 import Doctors from './components/Doctors/doctors';
+import DoctorsList from './components/Doctors/DoctorsList';
 
 const routes = [
   {
@@ -38,11 +39,19 @@ const routes = [
   },
   {
     type: 'collapse',
-    routeName: 'Doctors',
+    routeName: 'Home',
     key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
     route: '/doctors',
     component: <Doctors />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Doctors List',
+    key: 'doctors-list',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/doctorslist',
+    component: <DoctorsList />,
   },
 ];
 
