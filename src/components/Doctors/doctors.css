@@ -10,6 +10,22 @@ tbody tr td {
 
 .container {
   min-width: 90%;
+  margin: 2rem;
+}
+
+.discover__link {
+  text-decoration: none;
+}
+
+.reserve__btn {
+  background-color: #adcc12 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  padding: 8px 12px !important;
+}
+
+.reserve__btn:hover {
+  background-color: #8da70b !important;
 }
 
 @media only screen and (max-width: 992px) {
