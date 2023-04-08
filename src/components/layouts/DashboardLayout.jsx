@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }) => {
   const { pathname } = useLocation();
 
   const StyledContainer = styled(Box)(({ theme }) => ({
-    postion: 'relative',
+    position: 'relative',
     padding: 3,
 
     [theme.breakpoints.up.xl]: {
