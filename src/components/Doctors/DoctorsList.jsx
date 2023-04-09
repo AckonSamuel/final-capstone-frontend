@@ -11,6 +11,8 @@ import {
 import { FaCalendarAlt } from 'react-icons/fa';
 import { IoIosArrowDropright } from 'react-icons/io';
 import doctors from './doctor';
+import DashboardLayout from '../layouts/DashboardLayout';
+import Navbar from '../Navbar';
 
 const DoctorCard = ({ doctor }) => {
   const {
@@ -83,10 +85,13 @@ const DoctorsList = () => {
 
   return (
     <div>
-      <Container>
-        {row}
-        <ul className="pagination justify-content-center mt-4">{renderPageNumbers}</ul>
-      </Container>
+      <DashboardLayout>
+        <Navbar />
+        <Container className="mt-5">
+          {row}
+          <ul className="pagination justify-content-center mt-4">{renderPageNumbers}</ul>
+        </Container>
+      </DashboardLayout>
     </div>
   );
 };
