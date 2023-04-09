@@ -28,6 +28,30 @@ tbody tr td {
   background-color: #8da70b !important;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination .page-link {
+  border: none;
+  border-radius: 50px;
+  color: #FFF;
+  background-color:  #adcc12;
+}
+
+.pagination .page-link:hover {
+  background-color: #8da70b;
+  color: #adcc12;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #8da70b;
+  border-color: #8da70b;
+}
+
+
 @media only screen and (max-width: 992px) {
   .mobile__width  h2 {
     font-size: 1.5rem;
