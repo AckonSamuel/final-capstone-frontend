@@ -48,6 +48,31 @@ const doctors = [
     picture: 'https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg',
   },
   {
+    id: '10',
+    name: 'Dr. Rachel Wong',
+    major: 'Gynecology',
+    availability: 'Mon - Fri, 9am - 5pm',
+    price: '$190 per consultation',
+    picture: 'https://st2.depositphotos.com/1013513/12104/i/950/depositphotos_121040752-stock-photo-smiling-female-doctors-working-in.jpg',
+  },
+  {
+    id: '11',
+    name: 'Dr. William Park',
+    major: 'Neurology',
+    availability: 'Wed - Sun, 11am - 7pm',
+    price: '$275 per consultation',
+    picture: 'https://t3.ftcdn.net/jpg/02/95/51/80/360_F_295518052_aO5d9CqRhPnjlNDTRDjKLZHNftqfsxzI.jpg',
+  },
+  {
+    id: '12',
+    name: 'Dr. Jessica Nguyen',
+    major: 'Allergy and Immunology',
+    availability: 'Tue - Thu, 8am - 4pm',
+    price: '$160 per consultation',
+    picture: 'https://static.vecteezy.com/system/resources/previews/005/128/689/large_2x/beautiful-woman-doctor-with-hijab-portrait-on-white-background-free-photo.jpg',
+  },
+
+  {
     id: '7',
     name: 'Dr. Rachel Wong',
     major: 'Gynecology',
