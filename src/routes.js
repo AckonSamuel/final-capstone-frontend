@@ -42,7 +42,7 @@ const routes = [
     routeName: 'Home',
     key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
-    route: '/doctors',
+    route: '/home',
     component: <Doctors />,
   },
   {
