@@ -36,7 +36,7 @@ const DoctorList = () => {
             <div key={doctor.id}>
               <div className="d-flex flex-column flex-lg-row flex-md-row flex-sm-column align-items-center justify-content-between pt-5">
                 <div className="w-100 px-4">
-                  <img src={doctor.picture} alt="doctor" className="w-100" />
+                  <img src={doctor.picture} alt="doctor" className="w-100" style={{ height: '450px' }} />
                 </div>
                 <div className="mobile__width w-50 align-self-start">
                   <div className="w-100 px-4">
