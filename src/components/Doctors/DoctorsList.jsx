@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -53,10 +53,30 @@ const DoctorCard = ({ doctor }) => {
 };
 
 const DoctorsList = () => {
-  const doctorCards = doctors.map((doctor) => (
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cardsPerPage] = useState(3);
+
+  // Get current cards
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = doctors.slice(indexOfFirstCard, indexOfLastCard);
+
+  const doctorCards = currentCards.map((doctor) => (
     <Col key={doctor.id}>
       <DoctorCard doctor={doctor} />
     </Col>
+  ));
+
+  // Pagination logic
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(doctors.length / cardsPerPage); i += 1) {
+    pageNumbers.push(i);
+  }
+
+  const renderPageNumbers = pageNumbers.map((number) => (
+    <li key={number} className="page-item">
+      <Button className="page-link" onClick={() => setCurrentPage(number)}>{number}</Button>
+    </li>
   ));
 
   const row = <Row xs={1} md={3} className="g-4">{doctorCards}</Row>;
@@ -65,6 +85,7 @@ const DoctorsList = () => {
     <div>
       <Container>
         {row}
+        <ul className="pagination justify-content-center mt-4">{renderPageNumbers}</ul>
       </Container>
     </div>
   );
@@ -77,7 +98,7 @@ DoctorCard.propTypes = {
     name: PropTypes.string.isRequired,
     major: PropTypes.string.isRequired,
     availability: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
   }).isRequired,
 };
 
