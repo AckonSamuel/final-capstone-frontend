@@ -5,7 +5,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Button, Container, Table } from 'react-bootstrap';
 import Slider from 'react-slick';
-import doctors from './doctor';
+// import doctors from './doctor';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Navbar from '../Navbar';
 import './doctors.css';
@@ -18,7 +18,6 @@ const DoctorList = () => {
   useEffect(() => {
     dispatch(getDoctors());
   }, [dispatch]);
-  console.log(doctorDetails);
 
   const settings = {
     infinite: true,
@@ -42,28 +41,32 @@ const DoctorList = () => {
           autoplay={settings.autoplay}
           autoplaySpeed={settings.autoplaySpeed}
         >
-          {doctors.map((doctor) => (
+          {Array.isArray(doctorDetails) && doctorDetails.map((doctor) => (
             <div key={doctor.id}>
               <div className="d-flex flex-column flex-lg-row flex-md-row flex-sm-column align-items-center justify-content-between pt-5">
                 <div className="w-100 px-4">
-                  <img src={doctor.picture} alt="doctor" className="w-100" style={{ height: '450px' }} />
+                  <img src={doctor.profile_picture} alt="doctor" className="w-100" style={{ height: '450px' }} />
                 </div>
                 <div className="mobile__width w-50 align-self-start">
                   <div className="w-100 px-4">
-                    <h2 className="mb-3 float-md-end">{doctor.name}</h2>
+                    <h2 className="mb-3 float-md-end">
+                      {doctor.first_name}
+                      {' '}
+                      {doctor.last_name}
+                    </h2>
                     <Table striped bordered hover size="sm">
                       <tbody>
                         <tr>
                           <td>Major</td>
                           <td>{doctor.major}</td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                           <td>Availability</td>
                           <td>{doctor.availability}</td>
-                        </tr>
+                        </tr> */}
                         <tr>
                           <td>Price of Services</td>
-                          <td>{doctor.price}</td>
+                          <td>{doctor.fees}</td>
                         </tr>
                       </tbody>
                     </Table>
