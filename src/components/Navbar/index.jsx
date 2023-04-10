@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
         <Box color="inherit" mb={{ xs: 1 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} l />
+          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} />
         </Box>
         {isMini && (
           <Box sx={(theme) => navbarRow(theme, { isMini })}>

@@ -1,0 +1,76 @@
+.slick-next::before,
+.slick-prev::before {
+  color: #000 !important;
+}
+
+tbody tr td {
+  font-size: 0.8rem;
+  border: none;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.discover__link {
+  text-decoration: none;
+}
+
+.reserve__btn {
+  background-color: #adcc12 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  padding: 8px 12px !important;
+}
+
+.reserve__btn:hover {
+  background-color: #8da70b !important;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination .page-link {
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #adcc12;
+}
+
+.pagination .page-link:hover {
+  background-color: #8da70b;
+  color: #adcc12;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #8da70b;
+  border-color: #8da70b;
+}
+
+@media only screen and (max-width: 992px) {
+  .mobile__width h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__content {
+    padding: 0;
+  }
+
+  .slick-next::before,
+  .slick-prev::before {
+    display: none !important;
+  }
+
+  .mobile__width {
+    min-width: 100%;
+  }
+
+  button {
+    margin-right: 1.5rem !important;
+  }
+}

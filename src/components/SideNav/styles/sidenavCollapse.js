@@ -30,7 +30,7 @@ function collapseItem(theme, ownerState) {
         let backgroundValue;
 
         if (!active) {
-          backgroundValue = 'green';
+          backgroundValue = '#8da70b';
         }
 
         return backgroundValue;
@@ -47,7 +47,7 @@ function collapseIconBox(theme) {
   return {
     minWidth: pxToRem(32),
     minHeight: pxToRem(32),
-    color: 'white',
+    color: '#adcc12',
     borderRadius: 6,
     display: 'grid',
     placeItems: 'center',
@@ -57,7 +57,7 @@ function collapseIconBox(theme) {
     }),
 
     '& svg, svg g': {
-      color: 'white',
+      color: '#adcc12',
     },
   };
 }

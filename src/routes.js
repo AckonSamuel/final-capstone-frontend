@@ -4,6 +4,8 @@ import Login from './components/authentication/Login';
 import RegisterPage from './components/authentication/Registration';
 import Logout from './components/authentication/Logout';
 import Dashboard from './components/Dashboard';
+import Doctors from './components/Doctors/doctors';
+import DoctorsList from './components/Doctors/DoctorsList';
 
 const routes = [
   {
@@ -34,6 +36,22 @@ const routes = [
     icon: <Icon fontSize="small">person</Icon>,
     route: '/dashboard',
     component: <Dashboard />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Home',
+    key: 'doctors',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/home',
+    component: <Doctors />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Doctors List',
+    key: 'doctors-list',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/doctorslist',
+    component: <DoctorsList />,
   },
 ];
 
