@@ -87,7 +87,7 @@ const DoctorsList = () => {
     <div>
       <DashboardLayout>
         <Navbar />
-        <Container className="mt-5">
+        <Container style={{ marginTop: '5rem' }}>
           {row}
           <ul className="pagination justify-content-center mt-4">{renderPageNumbers}</ul>
         </Container>
