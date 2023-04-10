@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import BASE_URL from '../../common';
 
-const BASE_URL_DOCTORS = `${BASE_URL}/doctors`;
+const BASE_URL_DOCTORS = `${BASE_URL}/api/v1/doctors`;
+
 // Actions
 const ADD_DOCTOR = 'doctor-list/Doctor/ADD_DOCTOR';
 const REMOVE_DOCTOR = 'doctor-list/Doctor/REMOVE_DOCTOR';
@@ -35,7 +36,7 @@ export const removeDoctor = createAsyncThunk(REMOVE_DOCTOR,
 export const getDoctors = createAsyncThunk(GET_DOCTOR,
   async () => {
     const response = await axios.get(BASE_URL_DOCTORS);
-    return response;
+    return response.data;
   });
 
 const doctorsSlice = createSlice({
