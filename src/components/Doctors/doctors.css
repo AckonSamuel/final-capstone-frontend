@@ -1,5 +1,5 @@
-.slick-next:before,
-.slick-prev:before {
+.slick-next::before,
+.slick-prev::before {
   color: #000 !important;
 }
 
@@ -36,8 +36,8 @@ tbody tr td {
 .pagination .page-link {
   border: none;
   border-radius: 50px;
-  color: #FFF;
-  background-color:  #adcc12;
+  color: #fff;
+  background-color: #adcc12;
 }
 
 .pagination .page-link:hover {
@@ -50,29 +50,27 @@ tbody tr td {
   border-color: #8da70b;
 }
 
-
 @media only screen and (max-width: 992px) {
-  .mobile__width  h2 {
+  .mobile__width h2 {
     font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width:767px)
-{
+@media screen and (max-width: 767px) {
   .slider__content {
     padding: 0;
   }
-  .slick-next:before,
-  .slick-prev:before {
-    display:none !important;
+
+  .slick-next::before,
+  .slick-prev::before {
+    display: none !important;
   }
 
   .mobile__width {
     min-width: 100%;
   }
 
-  Button {
+  button {
     margin-right: 1.5rem !important;
   }
 }
-
