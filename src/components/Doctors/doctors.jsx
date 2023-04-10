@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Button, Container, Table } from 'react-bootstrap';
@@ -8,8 +9,17 @@ import doctors from './doctor';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Navbar from '../Navbar';
 import './doctors.css';
+import { getDoctors } from '../../redux/slices/doctorsSlice';
 
 const DoctorList = () => {
+  const dispatch = useDispatch();
+  const doctorDetails = useSelector((state) => state.doctors.doctors);
+
+  useEffect(() => {
+    dispatch(getDoctors());
+  }, [dispatch]);
+  console.log(doctorDetails);
+
   const settings = {
     infinite: true,
     dots: true,
