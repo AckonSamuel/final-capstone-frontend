@@ -5,7 +5,6 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Button, Container, Table } from 'react-bootstrap';
 import Slider from 'react-slick';
-// import doctors from './doctor';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Navbar from '../Navbar';
 import './doctors.css';
@@ -45,11 +44,13 @@ const DoctorList = () => {
             <div key={doctor.id}>
               <div className="d-flex flex-column flex-lg-row flex-md-row flex-sm-column align-items-center justify-content-between pt-5">
                 <div className="w-100 px-4">
-                  <img src={doctor.profile_picture} alt="doctor" className="w-100" style={{ height: '450px' }} />
+                  <img src={doctor.profile_picture} alt="doctor" className="w-100 doctor__image" />
                 </div>
                 <div className="mobile__width w-50 align-self-start">
                   <div className="w-100 px-4">
                     <h2 className="mb-3 float-md-end">
+                      Dr.
+                      {' '}
                       {doctor.first_name}
                       {' '}
                       {doctor.last_name}
@@ -60,13 +61,19 @@ const DoctorList = () => {
                           <td>Major</td>
                           <td>{doctor.major}</td>
                         </tr>
-                        {/* <tr>
+                        <tr>
                           <td>Availability</td>
-                          <td>{doctor.availability}</td>
-                        </tr> */}
+                          <td>{doctor.available_time}</td>
+                        </tr>
                         <tr>
                           <td>Price of Services</td>
-                          <td>{doctor.fees}</td>
+                          <td>
+                            $
+                            {' '}
+                            {doctor.fees}
+                            {' '}
+                            per consultation
+                          </td>
                         </tr>
                       </tbody>
                     </Table>
