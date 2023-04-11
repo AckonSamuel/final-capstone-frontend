@@ -8,6 +8,10 @@ tbody tr td {
   border: none;
 }
 
+.doctor__image {
+  height: 450px;
+}
+
 .container {
   margin-top: 2rem;
 }
@@ -66,11 +70,21 @@ tbody tr td {
     display: none !important;
   }
 
+  .doctor__image {
+    height: 350px;
+  }
+
   .mobile__width {
     min-width: 100%;
   }
 
   button {
     margin-right: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .doctor__image {
+    height: 250px;
   }
 }
