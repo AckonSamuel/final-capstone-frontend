@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -10,20 +11,32 @@ import {
 } from 'react-bootstrap';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { IoIosArrowDropright } from 'react-icons/io';
-import doctors from './doctor';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Navbar from '../Navbar';
+import { getDoctors } from '../../redux/slices/doctorsSlice';
 
 const DoctorCard = ({ doctor }) => {
   const {
-    id, picture, name, major, availability, price,
+    id,
+    profile_picture: profilePicture,
+    first_name: firstName,
+    last_name: lastName,
+    major,
+    available_time: availability,
+    fees,
   } = doctor;
 
   return (
     <Card key={id}>
-      <Card.Img variant="top" src={picture} style={{ height: '250px' }} />
+      <Card.Img variant="top" src={profilePicture} style={{ height: '250px' }} />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>
+          Dr.
+          {' '}
+          {firstName}
+          {' '}
+          {lastName}
+        </Card.Title>
       </Card.Body>
       <Table striped bordered hover size="sm">
         <tbody>
@@ -37,7 +50,13 @@ const DoctorCard = ({ doctor }) => {
           </tr>
           <tr>
             <td>Price of Services</td>
-            <td>{price}</td>
+            <td>
+              $
+              {' '}
+              {fees}
+              {' '}
+              per consultation
+            </td>
           </tr>
         </tbody>
       </Table>
@@ -55,13 +74,20 @@ const DoctorCard = ({ doctor }) => {
 };
 
 const DoctorsList = () => {
+  const dispatch = useDispatch();
+  const doctorDetails = useSelector((state) => state.doctors.doctors);
+
+  useEffect(() => {
+    dispatch(getDoctors());
+  }, [dispatch]);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(3);
 
   // Get current cards
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = doctors.slice(indexOfFirstCard, indexOfLastCard);
+  const currentCards = doctorDetails.slice(indexOfFirstCard, indexOfLastCard);
 
   const doctorCards = currentCards.map((doctor) => (
     <Col key={doctor.id}>
@@ -71,7 +97,7 @@ const DoctorsList = () => {
 
   // Pagination logic
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(doctors.length / cardsPerPage); i += 1) {
+  for (let i = 1; i <= Math.ceil(doctorDetails.length / cardsPerPage); i += 1) {
     pageNumbers.push(i);
   }
 
@@ -99,11 +125,12 @@ const DoctorsList = () => {
 DoctorCard.propTypes = {
   doctor: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    picture: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    profile_picture: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
     major: PropTypes.string.isRequired,
-    availability: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    available_time: PropTypes.string.isRequired,
+    fees: PropTypes.string.isRequired,
   }).isRequired,
 };
 
