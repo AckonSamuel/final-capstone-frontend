@@ -17,11 +17,16 @@ export const addDoctor = createAsyncThunk(
   ADD_DOCTOR,
   async (payload) => {
     const {
-      // eslint-disable-next-line camelcase
-      id, first_name, last_name, major, profile_picture, fees,
+      id,
+      first_name: firstName,
+      last_name: lastName,
+      major,
+      profile_picture: profilePicture,
+      fees,
+      available_time: availableTime,
     } = payload;
     await axios.post(BASE_URL_DOCTORS, {
-      id, first_name, last_name, major, profile_picture, fees,
+      id, firstName, lastName, major, profilePicture, fees, availableTime,
     });
     return payload;
   },
