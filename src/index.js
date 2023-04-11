@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'matchmedia-polyfill';
 import { SnackbarProvider } from 'notistack';
 import store from './redux/configStore';
 import App from './App';
