@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { IoIosArrowDropright } from 'react-icons/io';
 import {
   Button,
   Container,
@@ -9,8 +11,6 @@ import {
   Col,
   Row,
 } from 'react-bootstrap';
-import { FaCalendarAlt } from 'react-icons/fa';
-import { IoIosArrowDropright } from 'react-icons/io';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Navbar from '../Navbar';
 import { getDoctors } from '../../redux/slices/doctorsSlice';
@@ -61,13 +61,13 @@ const DoctorCard = ({ doctor }) => {
         </tbody>
       </Table>
       <Card.Body>
-        <Button className="float-end reserve__btn">
-          <FaCalendarAlt />
-          {' '}
-          Reserve now
-          {' '}
-          <IoIosArrowDropright />
-        </Button>
+        <Link className="text-decoration-none text-dark doctor__card" to={`/doctors/${id}`}>
+          <Button className="float-end reserve__btn">
+            click for details
+            {' '}
+            <IoIosArrowDropright />
+          </Button>
+        </Link>
       </Card.Body>
     </Card>
   );
