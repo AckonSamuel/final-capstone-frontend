@@ -3,6 +3,7 @@ import { appointmentsActions } from "./slices/appointmentSlice";
 import BASE_URL from "../../common";
 
 const Appointment_Url = `${BASE_URL}/api/v1/appointments`;
+
 export const getAppointments = () => async (dispatch) => {
   const sendRequest = async () => {
     const response = await axios.get(Appointment_Url);

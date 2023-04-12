@@ -1,13 +1,14 @@
 // @mui icons
-import Icon from '@mui/material/Icon';
-import Login from './components/authentication/Login';
-import RegisterPage from './components/authentication/Registration';
-import Logout from './components/authentication/Logout';
-import Dashboard from './components/Dashboard';
-import Doctors from './components/Doctors/doctors';
-import DoctorsList from './components/Doctors/DoctorsList';
-import Reservations from './components/Appointments/Reservations';
-import AppointmentForm from './components/Appointments/AppointmentForm';
+import Icon from "@mui/material/Icon";
+import Login from "./components/authentication/Login";
+import RegisterPage from "./components/authentication/Registration";
+import Logout from "./components/authentication/Logout";
+import Dashboard from "./components/Dashboard";
+import Doctors from "./components/Doctors/doctors";
+import DoctorsList from "./components/Doctors/DoctorsList";
+import Reservations from "./components/Appointments/Reservations";
+import AppointmentForm from "./components/Appointments/AppointmentForm";
+import DoctorDetails from "./components/Doctors/DoctorsDetails";
 
 const routes = [
   {
