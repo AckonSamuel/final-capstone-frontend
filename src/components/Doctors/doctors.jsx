@@ -44,7 +44,7 @@ const DoctorList = () => {
             <div key={doctor.id}>
               <div className="d-flex flex-column flex-lg-row flex-md-row flex-sm-column align-items-center justify-content-between pt-5">
                 <div className="w-100 px-4">
-                  <img src={doctor.profile_picture} alt="doctor" className="w-100 doctor__image" />
+                  <img src={doctor.profile_picture} alt={doctor.first_name} className="w-100 doctor__image" />
                 </div>
                 <div className="mobile__width w-50 align-self-start">
                   <div className="w-100 px-4">
@@ -77,7 +77,7 @@ const DoctorList = () => {
                         </tr>
                       </tbody>
                     </Table>
-                    <Link className="float-md-end discover__link" to="/doctorslist">
+                    <Link className="float-md-end discover__link" to="/home">
                       Discover all doctors
                     </Link>
                   </div>
