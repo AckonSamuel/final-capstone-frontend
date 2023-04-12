@@ -1,12 +1,18 @@
 import axios from "axios";
 import { appointmentsActions } from "./slices/appointmentSlice";
-import BASE_URL from "../../common";
+import BASE_URL from "../common";
 
-const Appointment_Url = `${BASE_URL}/api/v1/appointments`;
+const APPOINTMENT_URL = `${BASE_URL}/api/v1/appointments`;
+
+const token = JSON.parse(localStorage.getItem("user"));
 
 export const getAppointments = () => async (dispatch) => {
   const sendRequest = async () => {
-    const response = await axios.get(Appointment_Url);
+    const response = await axios.get(APPOINTMENT_URL, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
     const data = await response;
     const result = data.data;
     dispatch(appointmentsActions.getAppointments(result));
@@ -20,7 +26,11 @@ export const getAppointments = () => async (dispatch) => {
 
 export const makeAppointment = (dataObject) => async (dispatch) => {
   const sendRequest = async () => {
-    const response = await axios.post(Appointment_Url, dataObject);
+    const response = await axios.post(APPOINTMENT_URL, dataObject, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
     const data = await response;
     const result = data.data;
     if (result) {
@@ -36,7 +46,11 @@ export const makeAppointment = (dataObject) => async (dispatch) => {
 
 export const cancelAppointment = (id) => async (dispatch) => {
   const sendRequest = async () => {
-    const response = await axios.delete(`${Appointment_Url}/${id}`);
+    const response = await axios.delete(`${APPOINTMENT_URL}/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
     const data = await response;
     const result = data.data;
     if (result) {
