@@ -44,7 +44,13 @@ const DeleteDoctor = () => {
               {doctor.fees}
               $
             </span>
-            <button type="submit" onClick={deleteDoctor}>Delete</button>
+            <span>
+              Fees:
+              {' '}
+              {doctor.id}
+              $
+            </span>
+            <button type="submit" onClick={() => deleteDoctor(doctor.id)}>Delete</button>
           </li>
         ))}
       </ul>
