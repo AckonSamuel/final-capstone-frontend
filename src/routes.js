@@ -5,6 +5,8 @@ import RegisterPage from './components/authentication/Registration';
 import Logout from './components/authentication/Logout';
 import Doctors from './components/Doctors/doctors';
 import DoctorsList from './components/Doctors/DoctorsList';
+import Reservations from './components/Appointments/Reservations';
+import AppointmentForm from './components/Appointments/AppointmentForm';
 import DoctorDetails from './components/Doctors/DoctorsDetails';
 import AddDoctor from './components/AddDeleteDoctors/AddDoctor';
 import DeleteDoctor from './components/AddDeleteDoctors/DeleteDoctor';
@@ -37,18 +39,33 @@ const routes = [
     key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
     route: '/home',
-    component: <DoctorsList />,
-  },
-  {
-    type: 'collapse',
-    routeName: 'Doctors Details',
-    key: 'doctors-list',
-    icon: <Icon fontSize="small">person</Icon>,
-    route: '/doctors-details',
     component: <Doctors />,
   },
   {
     type: 'collapse',
+    routeName: 'Doctors List',
+    key: 'doctors-list',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/doctorslist',
+    component: <DoctorsList />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Reservations',
+    key: 'reservations',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/reservations',
+    component: <Reservations />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Appointment Form',
+    key: 'appointment-form',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/appointment-form',
+    component: <AppointmentForm />,
+  },
+  {
     routeName: 'Add Doctors',
     icon: <Icon fontSize="small">person</Icon>,
     route: '/add-doctors',
