@@ -1,77 +1,77 @@
 // @mui icons
-import Icon from "@mui/material/Icon";
-import Login from "./components/authentication/Login";
-import RegisterPage from "./components/authentication/Registration";
-import Logout from "./components/authentication/Logout";
-import Dashboard from "./components/Dashboard";
-import Doctors from "./components/Doctors/doctors";
-import DoctorsList from "./components/Doctors/DoctorsList";
-import DoctorDetails from "./components/Doctors/DoctorsDetails";
-import AddDoctor from "./components/AddDeleteDoctors/AddDoctor";
-import DeleteDoctor from "./components/AddDeleteDoctors/DeleteDoctor";
+import Icon from '@mui/material/Icon';
+import Login from './components/authentication/Login';
+import RegisterPage from './components/authentication/Registration';
+import Logout from './components/authentication/Logout';
+import Dashboard from './components/Dashboard';
+import Doctors from './components/Doctors/doctors';
+import DoctorsList from './components/Doctors/DoctorsList';
+import DoctorDetails from './components/Doctors/DoctorsDetails';
+import AddDoctor from './components/AddDeleteDoctors/AddDoctor';
+import DeleteDoctor from './components/AddDeleteDoctors/DeleteDoctor';
 
 const routes = [
   {
-    routeName: "Sign In",
-    key: "sign-in",
+    routeName: 'Sign In',
+    key: 'sign-in',
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/",
+    route: '/',
     component: <Login />,
   },
   {
-    routeName: "Register",
-    key: "sign-up",
+    routeName: 'Register',
+    key: 'sign-up',
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/register",
+    route: '/register',
     component: <RegisterPage />,
   },
   {
-    routeName: "Logout",
-    key: "sign-in",
+    routeName: 'Logout',
+    key: 'sign-in',
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/logout",
+    route: '/logout',
     component: <Logout />,
   },
   {
-    type: "collapse",
-    routeName: "Dashboard",
-    key: "dashboard",
+    type: 'collapse',
+    routeName: 'Dashboard',
+    key: 'dashboard',
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/dashboard",
+    route: '/dashboard',
     component: <Dashboard />,
   },
   {
-    type: "collapse",
-    routeName: "Home",
-    key: "doctors",
+    type: 'collapse',
+    routeName: 'Home',
+    key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/home",
+    route: '/home',
     component: <DoctorsList />,
   },
   {
-    type: "collapse",
-    routeName: "Doctors Details",
-    key: "doctors-list",
+    type: 'collapse',
+    routeName: 'Doctors Details',
+    key: 'doctors-list',
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/doctors-details",
+    route: '/doctors-details',
     component: <Doctors />,
   },
   {
-    type: "collapse",
-    routeName: "Add Doctors",
+    type: 'collapse',
+    routeName: 'Add Doctors',
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/add-doctors",
+    route: '/add-doctors',
     component: <AddDoctor />,
   },
   {
-    type: "collapse",
-    routeName: "Delete Doctors",
+    type: 'collapse',
+    routeName: 'Delete Doctors',
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/delete-doctors",
+    route: '/delete-doctors',
     component: <DeleteDoctor />,
   },
   {
-    route: "/doctors/:id",
+    route: '/doctors/:id',
     component: <DoctorDetails />,
   },
 ];

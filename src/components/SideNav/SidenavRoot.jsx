@@ -43,7 +43,7 @@ export default styled(Drawer)(({ theme, ownerState }) => {
       marginBottom: 'inherit',
       left: '0',
       width: pxToRem(96),
-      overflowX: 'hidden',
+      overflowX: 'hi"d"den',
       transform: 'translateX(0)',
       transition: transitions.create(['width', 'background-color'], {
         easing: transitions.easing.sharp,
