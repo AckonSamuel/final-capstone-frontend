@@ -13,7 +13,11 @@ const DeleteDoctor = () => {
     setDoctorsFunction();
   }, []);
 
-  console.log(doctors);
+  const deleteDoctor = async (id) => {
+    const response = await axios.delete(`http://localhost:3000/doctors/${id}`);
+    console.log(response);
+  };
+
   return (
     <div className="delete-doctor-page">
       <h3>Delete A Doctor</h3>
@@ -40,6 +44,7 @@ const DeleteDoctor = () => {
               {doctor.fees}
               $
             </span>
+            <button type="submit" onClick={deleteDoctor}>Delete</button>
           </li>
         ))}
       </ul>

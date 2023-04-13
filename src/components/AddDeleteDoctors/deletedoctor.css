@@ -30,3 +30,11 @@ img {
   width: 10rem;
   height: 8rem;
 }
+
+button {
+  background: red;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
