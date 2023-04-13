@@ -1,46 +1,203 @@
-# Getting Started with Create React App and Redux
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+<!-- TABLE OF CONTENTS -->
 
-## Available Scripts
+# 📗 Table of Contents
 
-In the project directory, you can run:
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-### `npm start`
+<!-- PROJECT DESCRIPTION -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📖 Doctor Appointment <a name="about-project"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is the Front-end of Doctor Appointment App that allows users to reserve a Doctor, add a new Doctor or delete an existing one.
 
-### `npm test`
+## 🛠 Built With <a name="built-with"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm run build`
+<details>
+  <summary>Language</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+  </ul>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary>Libraries</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+    <li><a href="https://react.dev/">Reactjs</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- Features -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Key Features <a name="key-features"></a>
 
-### `npm run eject`
+- **See Doctors-List**
+- **Reserve Appointment with doctor**
+- **Add doctors**
+- **Delete doctors**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Back End app <a name="live-demo"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Click [here](https://github.com/mkaya13/final-capstone-back-end) to access the back end app that was built with ruby-on-rails
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Kanban
+- Click [here](https://github.com/users/AckonSamuel/projects/3) to see the Front End Kanban project
+- Click [here](https://github.com/users/mkaya13/projects/6) to see the Back End Kanban project
 
-## Learn More
+### ScreenShots of Kanban boards
+![image](https://user-images.githubusercontent.com/109666020/228816819-36b3b381-5ce3-4f04-97c4-b2bcae44ea6e.png)
+![image](https://user-images.githubusercontent.com/109666020/228832678-00ab5e9c-02c8-4432-9b69-af0363cec886.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+In order to run this project you need to install these prerequisites:
+
+- If you're running on Windows you can download the prerequisites from the links down below:
+
+> [Nodejs](https://nodejs.org/en/)
+
+> [Git](https://git-scm.com/)
+
+- If you're running on Linux follow these steps down below:
+
+- Install git.
+
+```sh
+ sudo apt install git
+```
+
+- Install nodejs and npm.
+
+```sh
+ sudo apt install nodejs
+```
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  git clone git@github.com:AckonSamuel/final-capstone-frontend.git
+  cd final-capstone-frontend
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+`npm start`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Mujeeb ur Rahman**
+
+- GitHub: [@Mujeeb4582](https://github.com/Mujeeb4582)
+- Twitter: [@Mujeebu93992980](https://twitter.com/Mujeebu93992980)
+- LinkedIn: [@mujeeb-ur-rahman-54268011a](https://linkedin.com/in/mujeeb-ur-rahman-54268011a)
+
+👤 **Mert Kaya**
+
+- GitHub: [@mkaya13]()
+- Twitter: [@mkaya133]()
+- LinkedIn: [LinkedIn]()
+
+👤 **Simeon Trust**
+
+- GitHub: [@trust]()
+- LinkedIn: [@trust]()
+
+👤 **Ackon Samuel**
+
+- GitHub: [@AckonSamuel]()
+- Twitter: [@AckonSamuel]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **Add rating system**
+- **Updating Doctors details**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/AckonSamuel/final-capstone-frontend/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project by staring it.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for the project.
+
+[Design guidelines](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) provided by [Murat Korkmaz](https://www.behance.net/muratk) on Behance.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](https://github.com/AckonSamuel/final-capstone-frontend/blob/dev/Licence) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
