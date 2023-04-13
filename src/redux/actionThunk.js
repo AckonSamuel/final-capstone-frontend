@@ -1,10 +1,10 @@
-import axios from 'axios';
-import { appointmentsActions } from './slices/appointmentSlice';
-import BASE_URL from '../common';
+import axios from "axios";
+import { appointmentsActions } from "./slices/appointmentSlice";
+import BASE_URL from "../common";
 
 const APPOINTMENT_URL = `${BASE_URL}/api/v1/appointments`;
 
-const token = JSON.parse(localStorage.getItem('user'));
+const token = JSON.parse(localStorage.getItem("user"));
 
 export const getAppointments = () => async (dispatch) => {
   const sendRequest = async () => {
@@ -35,6 +35,7 @@ export const makeAppointment = (dataObject) => async (dispatch) => {
     const result = data.data;
     if (result) {
       console.log(result);
+      dispatch(appointmentsActions.updateStatus(result));
       dispatch(getAppointments());
     }
   };

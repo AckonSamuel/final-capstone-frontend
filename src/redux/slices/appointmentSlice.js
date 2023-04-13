@@ -1,12 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   appointments: [],
-  appointment: {},
+  status: {},
 };
 
 const appointmentsSlice = createSlice({
-  name: 'appointments',
+  name: "appointments",
   initialState,
   reducers: {
     getAppointments(state, action) {
@@ -15,10 +15,10 @@ const appointmentsSlice = createSlice({
         appointments: action.payload,
       };
     },
-    createAppointment(state, action) {
+    updateStatus(state, action) {
       return {
         ...state,
-        appointment: action.payload,
+        status: action.payload,
       };
     },
   },

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import BASE_URL from "../../common";
 import { makeAppointment } from "../../redux/actionThunk";
+import classes from "./AppointmentForm.module.css";
 
 const AppointmentForm = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const AppointmentForm = () => {
   const [docApTime, setDocApTime] = useState({});
   const [description, setDescription] = useState({});
   const doctors = useSelector((state) => state.doctors.doctors);
+  const status = useSelector((state) => state.appointments.status);
 
   const getDocApTimes = async (id) => {
     const response = await axios.get(`${DOCTOR_URL}/${id}`);
@@ -52,19 +54,18 @@ const AppointmentForm = () => {
       description,
       doctor_appointment_time_id: docApTime,
     };
+    console.log(objData, docApTime);
     dispatch(makeAppointment(objData));
   };
 
   return (
-    <form>
-      <label htmlFor="description">
-        Description
-        <input
-          type="text-area"
-          name="description"
-          onChange={descriptionHandler}
-        />
-      </label>
+    <form className={classes.form}>
+      <p>{status && status.status}</p>
+      <textarea
+        name="description"
+        placeholder="Description"
+        onChange={descriptionHandler}
+      />
 
       <label htmlFor="doctors">
         Select a doctor:
@@ -85,7 +86,7 @@ const AppointmentForm = () => {
 
       <label htmlFor="doctor_appointment">
         Select an appointment:
-        <select name="doctor_appointment" onChange={docTimesSelectHandler}>
+        <select name="doctor_appointment" onClick={docTimesSelectHandler}>
           {apTimes ? (
             apTimes.map((time) => {
               if (time.available) {
