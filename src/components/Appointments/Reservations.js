@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getAppointments } from "../../redux/actionThunk";
+import { getAppointments, cancelAppointment } from "../../redux/actionThunk";
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,10 @@ const Reservations = () => {
   useEffect(() => {
     dispatch(getAppointments());
   }, [dispatch]);
+
+  const cancelReservationHandler = (e) => {
+    dispatch(cancelAppointment(e.target.id));
+  };
 
   return (
     <div style={{ margin: "5% auto" }}>
@@ -21,7 +25,13 @@ const Reservations = () => {
             <p>{reserve.time_from}</p>
             <p>{reserve.time_to}</p>
             <p>{reserve.cancelled}</p>
-            <button>Cancel</button>
+            <button
+              type="button"
+              id={reserve.id}
+              onClick={cancelReservationHandler}
+            >
+              Cancel
+            </button>
           </div>
         ))
       ) : (
