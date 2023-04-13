@@ -65,6 +65,13 @@ This is the Front-end of Doctor Appointment App that allows users to reserve a D
 
 Click [here](https://github.com/mkaya13/final-capstone-back-end) to access the back end app that was built with ruby-on-rails
 
+### Kanban
+Click [here](https://github.com/users/AckonSamuel/projects/3) to see the Front End Kanban project
+Click [here](https://github.com/users/mkaya13/projects/6) to see the Back End Kanban project
+### ScreenShots of Kanban boards
+![image](https://user-images.githubusercontent.com/109666020/228816819-36b3b381-5ce3-4f04-97c4-b2bcae44ea6e.png)
+![image](https://user-images.githubusercontent.com/109666020/228832678-00ab5e9c-02c8-4432-9b69-af0363cec886.png)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
