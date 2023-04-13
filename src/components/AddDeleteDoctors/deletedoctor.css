@@ -1,0 +1,9 @@
+.delete-doctor-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 2.5%;
+}
