@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const userLogin = createAsyncThunk('users/usersLogin', async (user) => {
-  const res = await axios.get(`${BASE_URL}/auth/users/login`, { user });
+  const res = await axios.post(`${BASE_URL}/auth/users/login`, { user });
   if (res.data.accessToken) {
     localStorage.setItem('user', JSON.stringify(res.data));
   }

@@ -6,6 +6,7 @@ import Logout from './components/authentication/Logout';
 import Dashboard from './components/Dashboard';
 import Doctors from './components/Doctors/doctors';
 import DoctorsList from './components/Doctors/DoctorsList';
+import DoctorDetails from './components/Doctors/DoctorsDetails';
 
 const routes = [
   {
@@ -43,15 +44,19 @@ const routes = [
     key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
     route: '/home',
-    component: <Doctors />,
+    component: <DoctorsList />,
   },
   {
     type: 'collapse',
-    routeName: 'Doctors List',
+    routeName: 'Doctors Details',
     key: 'doctors-list',
     icon: <Icon fontSize="small">person</Icon>,
-    route: '/doctorslist',
-    component: <DoctorsList />,
+    route: '/doctors-details',
+    component: <Doctors />,
+  },
+  {
+    route: '/doctors/:id',
+    component: <DoctorDetails />,
   },
 ];
 

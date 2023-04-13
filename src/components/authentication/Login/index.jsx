@@ -52,13 +52,14 @@ function Basic() {
       const data = getValues();
 
       dispatch(userLogin(data)).then((res) => {
-        if (res.type === 'user/userLogin/fulfilled') {
-          navigate('/dashbard');
+        if (res.type === 'users/usersLogin/fulfilled') {
+          navigate('/home');
         }
       });
     }
+    setSubmitted(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [submitted]);
+  }, [submitted, dispatch]);
 
   return (
     <BasicLayout>
