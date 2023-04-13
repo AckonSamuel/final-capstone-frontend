@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   appointments: [],
@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const appointmentsSlice = createSlice({
-  name: "appointments",
+  name: 'appointments',
   initialState,
   reducers: {
     getAppointments(state, action) {

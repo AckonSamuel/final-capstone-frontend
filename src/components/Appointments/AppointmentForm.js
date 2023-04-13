@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-import BASE_URL from "../../common";
-import { makeAppointment } from "../../redux/actionThunk";
-import classes from "./AppointmentForm.module.css";
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+import BASE_URL from '../../common';
+import { makeAppointment } from '../../redux/actionThunk';
+import classes from './AppointmentForm.module.css';
 
 const AppointmentForm = () => {
   const dispatch = useDispatch();
@@ -40,7 +40,6 @@ const AppointmentForm = () => {
   };
 
   const docTimesSelectHandler = (e) => {
-    console.log(e.target.value);
     setDocApTime(e.target.value);
   };
 
@@ -54,7 +53,6 @@ const AppointmentForm = () => {
       description,
       doctor_appointment_time_id: docApTime,
     };
-    console.log(objData, docApTime);
     dispatch(makeAppointment(objData));
   };
 
@@ -77,7 +75,9 @@ const AppointmentForm = () => {
           {doctors.map((doctor) => (
             <option value={doctor.id} id={doctor.id} key={doctor.id}>
               Name:
-              {`${doctor.first_name} ${doctor.last_name}`}, Expertise:{" "}
+              {`${doctor.first_name} ${doctor.last_name}`}
+              , Expertise:
+              {' '}
               {doctor.major}
             </option>
           ))}
@@ -92,11 +92,19 @@ const AppointmentForm = () => {
               if (time.available) {
                 return (
                   <option value={time.id} id={time.id} key={time.id}>
-                    Date: {time.date}, From: {time.time_from}, To:{" "}
+                    Date:
+                    {' '}
+                    {time.date}
+                    , From:
+                    {' '}
+                    {time.time_from}
+                    , To:
+                    {' '}
                     {time.time_to}
                   </option>
                 );
               }
+              return '';
             })
           ) : (
             <option value="no appointment">NO value</option>

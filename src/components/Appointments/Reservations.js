@@ -1,7 +1,8 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getAppointments, cancelAppointment } from "../../redux/actionThunk";
-import classes from "./Reservations.module.css";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAppointments, cancelAppointment } from '../../redux/actionThunk';
+import classes from './Reservations.module.css';
+
 const Reservations = () => {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.appointments.appointments);
@@ -24,7 +25,13 @@ const Reservations = () => {
             <div className={classes.date_time}>
               <p>{reserve.date}</p>
               <p>
-                Duration: {reserve.time_from} - {reserve.time_to}
+                Duration:
+                {' '}
+                {reserve.time_from}
+                {' '}
+                -
+                {' '}
+                {reserve.time_to}
               </p>
             </div>
             <button
