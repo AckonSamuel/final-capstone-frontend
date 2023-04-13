@@ -6,4 +6,27 @@
   align-items: center;
   align-content: center;
   padding-top: 2.5%;
+  padding-left: 16%;
+}
+
+.delete-doctor-page ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 5%;
+}
+
+.delete-doctor-page ul li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 10rem;
+  height: 8rem;
 }
