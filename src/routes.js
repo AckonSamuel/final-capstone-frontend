@@ -3,10 +3,11 @@ import Icon from '@mui/material/Icon';
 import Login from './components/authentication/Login';
 import RegisterPage from './components/authentication/Registration';
 import Logout from './components/authentication/Logout';
-import Dashboard from './components/Dashboard';
 import Doctors from './components/Doctors/doctors';
 import DoctorsList from './components/Doctors/DoctorsList';
 import DoctorDetails from './components/Doctors/DoctorsDetails';
+import AddDoctor from './components/AddDeleteDoctors/AddDoctor';
+import DeleteDoctor from './components/AddDeleteDoctors/DeleteDoctor';
 
 const routes = [
   {
@@ -32,14 +33,6 @@ const routes = [
   },
   {
     type: 'collapse',
-    routeName: 'Dashboard',
-    key: 'dashboard',
-    icon: <Icon fontSize="small">person</Icon>,
-    route: '/dashboard',
-    component: <Dashboard />,
-  },
-  {
-    type: 'collapse',
     routeName: 'Home',
     key: 'doctors',
     icon: <Icon fontSize="small">person</Icon>,
@@ -53,6 +46,20 @@ const routes = [
     icon: <Icon fontSize="small">person</Icon>,
     route: '/doctors-details',
     component: <Doctors />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Add Doctors',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/add-doctors',
+    component: <AddDoctor />,
+  },
+  {
+    type: 'collapse',
+    routeName: 'Delete Doctors',
+    icon: <Icon fontSize="small">person</Icon>,
+    route: '/delete-doctors',
+    component: <DeleteDoctor />,
   },
   {
     route: '/doctors/:id',
